@@ -1,6 +1,6 @@
 "use strict";
 var Client= require('faye-websocket').Client;
-var DDP = require('../../src/ddp');
+var DDP = require('../../lib/ddp');
 
 const options = {
     endpoint: "ws://localhost:3000/websocket",

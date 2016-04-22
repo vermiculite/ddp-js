@@ -1,6 +1,6 @@
 'use strict';
 
-var Queue = require('../../src/queue');
+var Queue = require('../../lib/queue');
 
 describe("`Queue` class", () => {
 

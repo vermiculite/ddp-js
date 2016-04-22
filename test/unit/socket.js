@@ -1,6 +1,6 @@
 "use strict";
 
-var Socket = require('../../src/socket');
+var Socket = require('../../lib/socket');
 
 class SocketConstructorMock {
     close () {}

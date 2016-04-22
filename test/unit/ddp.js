@@ -1,7 +1,7 @@
 'use strict';
 
-var DDP = require("../../src/ddp");
-var Socket = require("../../src/socket");
+var DDP = require("../../lib/ddp");
+var Socket = require("../../lib/socket");
 
 class SocketConstructorMock {
     send () {}

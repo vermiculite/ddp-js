@@ -1,4 +1,4 @@
-var utils = require('../../src/utils');
+var utils = require('../../lib/utils');
 var contains = utils.contains;
 var uniqueId = utils.uniqueId;
 

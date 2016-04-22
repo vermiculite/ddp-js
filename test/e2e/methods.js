@@ -1,6 +1,6 @@
 var Client = require("faye-websocket");
 
-var DDP = require("../../src/ddp");
+var DDP = require("../../lib/ddp");
 
 describe("methods", () => {
 
