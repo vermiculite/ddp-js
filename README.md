@@ -1,5 +1,5 @@
 
-# ddp.js copied and removed babel to enable use with react native.
+# ddp.js copied and removed babel to enable use with react native. Don't use this [use that](https://github.com/mondora/ddp.js/)
 
 A javascript isomorphic/universal ddp client.
 
