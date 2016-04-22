@@ -1,0 +1,44 @@
+{
+  "name": "ddp_js",
+  "version": "2.1.0",
+  "description": "ddp javascript client",
+  "main": "lib/ddp.js",
+  "scripts": {
+    "clean": "rimraf lib coverage",
+    "coverage": "$(npm bin)/isparta cover $(npm bin)/_mocha -- --recursive test/unit  --require test/setup",
+    "coveralls": "cat ./coverage/lcov.info | coveralls",
+    "dev": "npm test -- --watch  --require test/setup",
+    "test": "mocha --recursive test/unit  --require test/setup",
+    "start-meteor": "cd test/server/ && meteor",
+    "e2e-test": "mocha --recursive test/e2e  --require test/setup",
+    "e2e-dev": "npm run e2e-test -- --watch  --require test/setup"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vermiculite/ddp_js"
+  },
+  "keywords": [
+    "ddp",
+    "meteor",
+    "asteroid"
+  ],
+  "author": "Sean Hayes <seanowenhayes@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vermiculite/ddp_js/issues"
+  },
+  "homepage": "https://github.com/vermiculite/ddp_js",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "coveralls": "^2.11.6",
+    "eslint": "^1.10.3",
+    "faye-websocket": "^0.10.0",
+    "isparta": "^4.0.0",
+    "mocha": "^2.4.5",
+    "sinon": "^1.17.3",
+    "sinon-chai": "^2.8.0"
+  },
+  "dependencies": {
+    "wolfy87-eventemitter": "^4.3.0"
+  }
+}
