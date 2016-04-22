@@ -4,7 +4,7 @@
 [![Dependency Status](https://david-dm.org/mondora/ddp.js.svg)](https://david-dm.org/mondora/ddp.js)
 [![devDependency Status](https://david-dm.org/mondora/ddp.js/dev-status.svg)](https://david-dm.org/mondora/ddp.js#info=devDependencies)
 
-# ddp.js
+# ddp.js copied and removed babel to enable use with react native.
 
 A javascript isomorphic/universal ddp client.
 
@@ -25,7 +25,7 @@ The purpose of this library is:
 
 ## Install
 
-    npm install ddp.js
+    npm install ddp-js
 
 ## Example usage
 
