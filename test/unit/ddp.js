@@ -193,17 +193,21 @@ describe("`DDP` class", () => {
 
     describe("`socket` `close` handler", () => {
 
+        var clock;
+        const reconnectPeriod = 10000;
+
         beforeEach(() => {
-            sinon.stub(global, "setTimeout", fn => {fn();});
+            clock = sinon.useFakeTimers();
         });
         afterEach(() => {
-            global.setTimeout.restore();
+            clock.restore();
         });
 
         it("emits the `disconnected` event", () => {
             const ddp = new DDP(options);
             ddp.emit = sinon.spy();
             ddp.socket.emit("close");
+            clock.tick(reconnectPeriod);
             expect(ddp.emit).to.have.been.calledWith("disconnected");
         });
 
@@ -212,6 +216,7 @@ describe("`DDP` class", () => {
             ddp.status = "connected";
             ddp.emit = sinon.spy();
             ddp.socket.emit("close");
+            clock.tick(reconnectPeriod);
             expect(ddp.status).to.equal("disconnected");
         });
 
@@ -219,6 +224,7 @@ describe("`DDP` class", () => {
             const ddp = new DDP(options);
             ddp.socket.open = sinon.spy();
             ddp.socket.emit("close");
+            clock.tick(reconnectPeriod);
             expect(ddp.socket.open).to.have.callCount(1);
         });
 
@@ -226,6 +232,7 @@ describe("`DDP` class", () => {
             const ddp = new DDP(Object.assign({}, options, {autoReconnect: false}));
             ddp.socket.open = sinon.spy();
             ddp.socket.emit("close");
+            clock.tick(reconnectPeriod);
             expect(ddp.socket.open).to.have.callCount(0);
         });
 
